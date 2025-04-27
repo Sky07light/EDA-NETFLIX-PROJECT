@@ -42,3 +42,11 @@ df['year_added'] = df['date_added'].dt.year
 # Extract numeric duration and its type
 df['duration_int'] = df['duration'].str.extract(r'(\d+)').astype(float)
 df['duration_type'] = df['duration'].str.extract(r'([a-zA-Z]+)')
+
+plt.figure(figsize=(6,4))
+sns.countplot(data=df, x='type')
+plt.title("Count of Movies and TV Shows")
+plt.xlabel("Type")
+plt.ylabel("Count")
+plt.show()
+
