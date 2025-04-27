@@ -6,7 +6,7 @@ import seaborn as sns
 sns.set(style='whitegrid')
 plt.style.use('seaborn-v0_8-muted')
 
-# Load Dataset
+# Load Dataset 
 df = pd.read_csv(r"D:\\PythonPr\\netflix_titles.csv")
 
 # Head of dataset
