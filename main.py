@@ -34,3 +34,11 @@ df['cast'] = df['cast'].fillna("Unknown")
 df['country'] = df['country'].fillna("Unknown")
 df['rating'] = df['rating'].fillna("Unknown")
 df['duration'] = df['duration'].fillna("Unknown")
+
+# Convert 'date_added' to datetime (flexible format)
+df['date_added'] = pd.to_datetime(df['date_added'], format='mixed', errors='coerce')
+df['year_added'] = df['date_added'].dt.year
+
+# Extract numeric duration and its type
+df['duration_int'] = df['duration'].str.extract(r'(\d+)').astype(float)
+df['duration_type'] = df['duration'].str.extract(r'([a-zA-Z]+)')
